@@ -6,6 +6,9 @@ RUN apk add --no-cache tini
 # for us, like forwarding signals and reaping zombie processes.
 ENTRYPOINT ["/sbin/tini","--"]
 
+# Install Fortune.
+RUN apk add --no-cache fortune
+
 # Create a working directory for our application.
 RUN mkdir -p /app
 WORKDIR /app
