@@ -5,9 +5,9 @@ const app = express();
 // Set handler for the index of the website
 app.get('/', (req, res) => {
 // Run the system `fortune` command and respond with the message
-child_process.exec(`Your fortune is: fortune`, (error, message) => {
+child_process.exec('fortune', (error, message) => {
 if(error === null) {
-res.send(message);
+res.send('Your fortune is: '+message);
 } else {
 res.send('Error: ' + error);
 }
